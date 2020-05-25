@@ -1,0 +1,87 @@
+2020-05-14 15:37:04,783 ERROR: Exception on /user/elisan [GET] [in /Users/sora_mbp/Documents/Python/webserver-py/lib/python3.7/site-packages/flask/app.py:1892]
+Traceback (most recent call last):
+  File "/Users/sora_mbp/Documents/Python/webserver-py/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/sora_mbp/Documents/Python/webserver-py/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/sora_mbp/Documents/Python/webserver-py/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/sora_mbp/Documents/Python/webserver-py/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/sora_mbp/Documents/Python/webserver-py/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/sora_mbp/Documents/Python/webserver-py/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/sora_mbp/Documents/Python/webserver-py/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/sora_mbp/Documents/Python/webserver-py/app/routes.py", line 77, in user
+    return render_template('user.html', user=user, posts=posts)
+  File "/Users/sora_mbp/Documents/Python/webserver-py/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
+    ctx.app,
+  File "/Users/sora_mbp/Documents/Python/webserver-py/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/Users/sora_mbp/Documents/Python/webserver-py/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/sora_mbp/Documents/Python/webserver-py/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/sora_mbp/Documents/Python/webserver-py/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/sora_mbp/Documents/Python/webserver-py/app/templates/user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/Users/sora_mbp/Documents/Python/webserver-py/app/templates/base.html", line 34, in top-level template code
+    {% block content %}{% endblock %}
+  File "/Users/sora_mbp/Documents/Python/webserver-py/app/templates/user.html", line 15, in block "content"
+    <button type="button" onclick="window.location.href='{{url_for('unfollow', username=user.username)}}';">Unfollow</button>
+  File "/Users/sora_mbp/Documents/Python/webserver-py/lib/python3.7/site-packages/flask/helpers.py", line 370, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/Users/sora_mbp/Documents/Python/webserver-py/lib/python3.7/site-packages/flask/app.py", line 2216, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/Users/sora_mbp/Documents/Python/webserver-py/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/sora_mbp/Documents/Python/webserver-py/lib/python3.7/site-packages/flask/helpers.py", line 358, in url_for
+    endpoint, values, method=method, force_external=external
+  File "/Users/sora_mbp/Documents/Python/webserver-py/lib/python3.7/site-packages/werkzeug/routing.py", line 2179, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'unfollow' with values ['username']. Did you mean 'follow' instead?
+2020-05-14 15:41:49,278 INFO: TweetBlog startup [in /Users/sora_mbp/Documents/Python/webserver-py/app/__init__.py:47]
+2020-05-14 15:42:50,713 INFO: TweetBlog startup [in /Users/sora_mbp/Documents/Python/webserver-py/app/__init__.py:47]
+2020-05-14 16:03:41,824 INFO: TweetBlog startup [in /Users/sora_mbp/Documents/Python/webserver-py/app/__init__.py:47]
+2020-05-14 16:04:16,831 INFO: TweetBlog startup [in /Users/sora_mbp/Documents/Python/webserver-py/app/__init__.py:47]
+2020-05-14 16:04:18,156 ERROR: Exception on / [GET] [in /Users/sora_mbp/Documents/Python/webserver-py/lib/python3.7/site-packages/flask/app.py:1892]
+Traceback (most recent call last):
+  File "/Users/sora_mbp/Documents/Python/webserver-py/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/sora_mbp/Documents/Python/webserver-py/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/sora_mbp/Documents/Python/webserver-py/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/sora_mbp/Documents/Python/webserver-py/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/sora_mbp/Documents/Python/webserver-py/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/sora_mbp/Documents/Python/webserver-py/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/sora_mbp/Documents/Python/webserver-py/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/sora_mbp/Documents/Python/webserver-py/app/routes.py", line 35, in index
+    return render_template('index.html', title='Home', posts=posts)
+  File "/Users/sora_mbp/Documents/Python/webserver-py/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
+    ctx.app,
+  File "/Users/sora_mbp/Documents/Python/webserver-py/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/Users/sora_mbp/Documents/Python/webserver-py/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/sora_mbp/Documents/Python/webserver-py/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/sora_mbp/Documents/Python/webserver-py/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/sora_mbp/Documents/Python/webserver-py/app/templates/index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/Users/sora_mbp/Documents/Python/webserver-py/app/templates/base.html", line 34, in top-level template code
+    {% block content %}{% endblock %}
+  File "/Users/sora_mbp/Documents/Python/webserver-py/app/templates/index.html", line 6, in block "content"
+    {{ form.hidden.tag() }}
+  File "/Users/sora_mbp/Documents/Python/webserver-py/lib/python3.7/site-packages/jinja2/environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'form' is undefined
+2020-05-14 16:04:43,510 INFO: TweetBlog startup [in /Users/sora_mbp/Documents/Python/webserver-py/app/__init__.py:47]

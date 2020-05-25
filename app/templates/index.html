@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+	<h1>{{ _('Hello, %(username)s!', username = current_user.username) }}</h1>
+	{% if form %}
+	<form action="" method="post">
+		{{ form.hidden_tag() }}
+		<p>
+			{{ form.post.label }}<br>
+			{{ form.post(cols=32, rows=4) }}<br>
+			{% for error in form.post.errors %}
+			 <span style="color:red;">[{{error}}]</span>
+        	{% endfor %}
+		</p>
+		<p>
+        {{ form.submit() }}
+    	</p>
+	</form>
+	{% endif %}
+	<h3>{{ _('Here are some recent posts!') }}</h3>
+	{% for post in posts %}
+		{% include '_tweets.html' %}
+	{% endfor %}
+   <nav aria-label="...">
+        <ul class="pager">
+            <li class="previous{% if not prev_url %} disabled{% endif %}">
+                <a href="{{ prev_url or '#' }}">
+                    <span aria-hidden="true">&larr;</span> Newer posts
+                </a>
+            </li>
+            <li class="next{% if not next_url %} disabled{% endif %}">
+                <a href="{{ next_url or '#' }}">
+                    Older posts <span aria-hidden="true">&rarr;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+<!--	{% if prev_page %}-->
+<!--	<a href="{{ prev_page }}"> Newer Posts</a>-->
+<!--	{% endif %}-->
+<!--	{% if next_page %}-->
+<!--	<a href="{{ next_page }}"> Older Posts</a>-->
+<!--	{% endif %}-->
+{% endblock %}
